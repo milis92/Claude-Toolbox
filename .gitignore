@@ -1,0 +1,10 @@
+# Eval workspaces (large, generated artifacts)
+*-workspace/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+/tmp/

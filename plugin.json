@@ -1,0 +1,9 @@
+{
+  "name": "claude-conventions",
+  "description": "General skills, agents, hooks, and commands for Claude Code",
+  "version": "0.1.0",
+  "skills": "skills/",
+  "agents": "agents/",
+  "hooks": "hooks/",
+  "commands": "commands/"
+}
