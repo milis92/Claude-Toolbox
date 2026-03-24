@@ -30,9 +30,10 @@ Then pick the plugins you want from the list below.
 
 ## Available Plugins
 
-| Plugin                                    | Type  | Description                                                        |
-|-------------------------------------------|-------|--------------------------------------------------------------------|
-| [create-rule](#create-rule) | Skill | Discover and document coding conventions as `.claude/rules/` files |
+| Plugin                        | Type  | Description                                                            |
+|-------------------------------|-------|------------------------------------------------------------------------|
+| [create-rule](#create-rule)   | Skill | Discover and document coding conventions as `.claude/rules/` files     |
+| [write-readme](#write-readme) | Skill | Create and improve README files with clear structure and real examples |
 
 ### `create-rule`
 
@@ -45,7 +46,6 @@ Then pick the plugins you want from the list below.
 >
 > This skill creates rule files through a guided discovery-to-validation workflow: it samples your real code, identifies
 > non-obvious patterns, and produces focused rules — no manual writing needed.
-
 
 ```
 - Write a rule file for our testing conventions
@@ -65,6 +65,35 @@ Then pick the plugins you want from the list below.
 3. **Eval** -- Launches a subagent in an isolated worktree to verify the rule file actually works. Iterates up to 3
    times if gaps are found.
 4. **Completion** -- Recommends reviewing the full setup with `/claude-md-improver`.
+
+</details>
+
+### `write-readme`
+
+```
+/plugin install write-readme@claude-toolbox-marketplace
+```
+
+> A good README is the front door to your project. This skill creates structured, audience-aware READMEs with centered
+> titles, badges, feature lists, installation instructions, usage examples, and configuration tables — whether you're
+> starting from scratch or improving what's already there.
+
+```
+- Write a README for this project
+- Our README is outdated, can you improve it?
+- Create documentation for this CLI tool
+```
+
+<details>
+<summary><strong>How it works</strong></summary>
+
+<br>
+
+1. **Analyze** -- Reads build configs, entry points, source files, and existing docs to understand the project.
+2. **Adapt** -- Determines project type (library, CLI, web app, API, internal tool) and tailors the structure.
+3. **Write** -- Generates a README with centered title/badges, features, installation, quick start, usage,
+   configuration tables, development setup, and architecture overview — separated by horizontal dividers.
+4. **Review** -- Presents the draft for your feedback before finalizing.
 
 </details>
 
