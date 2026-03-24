@@ -15,6 +15,18 @@
       "license": "MIT",
       "repository": "https://github.com/milis92/Claude-Toolbox",
       "homepage": "https://github.com/milis92/Claude-Toolbox"
+    },
+    {
+      "name": "write-readme",
+      "source": "./plugins/write-readme",
+      "description": "Create and improve README files with clear structure, practical examples, and audience-aware content.",
+      "version": "0.1.0",
+      "author": {
+        "name": "milis92"
+      },
+      "license": "MIT",
+      "repository": "https://github.com/milis92/Claude-Toolbox",
+      "homepage": "https://github.com/milis92/Claude-Toolbox"
     }
   ]
 }
