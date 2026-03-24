@@ -5,8 +5,8 @@
   },
   "plugins": [
     {
-      "name": "writing-rule-files",
-      "source": "./plugins/writing-rule-files",
+      "name": "create-rule",
+      "source": "./plugins/create-rule",
       "description": "Discover and document coding conventions as .claude/rules/ files through a guided workflow.",
       "version": "0.1.0",
       "author": {

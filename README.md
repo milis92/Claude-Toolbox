@@ -32,23 +32,26 @@ Then pick the plugins you want from the list below.
 
 | Plugin                                    | Type  | Description                                                        |
 |-------------------------------------------|-------|--------------------------------------------------------------------|
-| [writing-rule-files](#writing-rule-files) | Skill | Discover and document coding conventions as `.claude/rules/` files |
+| [create-rule](#create-rule) | Skill | Discover and document coding conventions as `.claude/rules/` files |
 
-### `writing-rule-files`
+### `create-rule`
 
 ```
-/plugin install writing-rule-files@claude-toolbox-marketplace
+/plugin install create-rule@claude-toolbox-marketplace
 ```
 
-> Creates `.claude/rules/<topic>.md` files through a guided discovery-to-validation workflow. Instead of writing
-> convention docs by hand, this skill samples your real code, identifies non-obvious patterns, and produces focused rule
-> files that Claude Code respects in every future session.
-> 
-> Trigger with:
-> 
-> - Write a rule file for our testing conventions
-> - Create a .claude/rules file for error handling patterns
-> - Document our API endpoint patterns as a rule file
+> Rule files (`.claude/rules/<topic>.md`) let you split a large `CLAUDE.md` into smaller, focused files that Claude Code
+> loads on demand — only when editing files that match the rule's `paths:` glob. This keeps context lean and relevant.
+>
+> This skill creates rule files through a guided discovery-to-validation workflow: it samples your real code, identifies
+> non-obvious patterns, and produces focused rules — no manual writing needed.
+
+
+```
+- Write a rule file for our testing conventions
+- Create a .claude/rules file for error handling patterns
+- Document our API endpoint patterns as a rule file
+```
 
 <details>
 <summary><strong>How it works</strong></summary>

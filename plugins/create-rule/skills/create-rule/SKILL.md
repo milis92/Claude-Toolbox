@@ -1,5 +1,5 @@
 ---
-name: writing-rule-files
+name: create-rule
 description: >
   Use when the user wants to create, write, update, or generate a .claude/rules/
   file for any topic — testing, networking, error handling, dependency injection,
