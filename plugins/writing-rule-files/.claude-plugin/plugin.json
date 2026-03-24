@@ -1,6 +1,6 @@
 {
-  "name": "claude-toolbox",
-  "description": "A collection of Claude Code plugins that make your AI coding workflow smarter.",
+  "name": "writing-rule-files",
+  "description": "Discover and document coding conventions as .claude/rules/ files through a guided workflow.",
   "version": "0.1.0",
   "author": {
     "name": "milis92"

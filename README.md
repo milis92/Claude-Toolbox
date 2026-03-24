@@ -13,38 +13,42 @@ Claude Toolbox
 
 ---
 
-Claude Code is great out of the box, but plugins make it better. Claude Toolbox is a curated set of skills, agents,
-hooks, and commands that extend what Claude Code can do — from discovering your team's coding conventions to automating
-repetitive workflows.
+Claude Code is great out of the box, but plugins make it better. Claude Toolbox is a curated set of plugins that extend
+what Claude Code can do — from discovering your team's coding conventions to automating repetitive workflows.
+
+Each plugin is independently installable, so you only enable what you need.
 
 ## Installation
 
-Add the marketplace and install:
+Add the marketplace:
 
 ```
 /plugin marketplace add milis92/Claude-Toolbox
-/plugin install claude-toolbox@claude-toolbox-marketplace
 ```
 
-## What's Included
+Then pick the plugins you want from the list below.
 
-| Plugin                        | Type  | Description                                                        |
-|-------------------------------|-------|--------------------------------------------------------------------|
-| [writing-rule-files](#skills) | Skill | Discover and document coding conventions as `.claude/rules/` files |
+## Available Plugins
 
-## Skills
+| Plugin                                    | Type  | Description                                                        |
+|-------------------------------------------|-------|--------------------------------------------------------------------|
+| [writing-rule-files](#writing-rule-files) | Skill | Discover and document coding conventions as `.claude/rules/` files |
 
 ### `writing-rule-files`
+
+```
+/plugin install writing-rule-files@claude-toolbox-marketplace
+```
 
 > Creates `.claude/rules/<topic>.md` files through a guided discovery-to-validation workflow. Instead of writing
 > convention docs by hand, this skill samples your real code, identifies non-obvious patterns, and produces focused rule
 > files that Claude Code respects in every future session.
-
-```
-- Write a rule file for our testing conventions
-- Create a .claude/rules file for error handling patterns
-- Document our API endpoint patterns as a rule file
-```
+> 
+> Trigger with:
+> 
+> - Write a rule file for our testing conventions
+> - Create a .claude/rules file for error handling patterns
+> - Document our API endpoint patterns as a rule file
 
 <details>
 <summary><strong>How it works</strong></summary>
@@ -63,8 +67,7 @@ Add the marketplace and install:
 
 ## Contributing
 
-Want to add a new skill, agent, hook, or command? This project has two Claude Code plugins enabled that will guide you
-through the process.
+Want to add a new plugin? This project has two Claude Code plugins enabled that will guide you through the process.
 
 **plugin-dev** -- Plugin development toolkit
 
