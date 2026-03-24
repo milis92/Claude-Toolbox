@@ -1,0 +1,45 @@
+{
+  "skill_name": "writing-rule-files",
+  "evals": [
+    {
+      "id": 1,
+      "name": "react-testing-conventions",
+      "prompt": "Write a rule file for testing conventions",
+      "expected_output": "A .claude/rules/testing.md file with paths: frontmatter scoped to test files, documenting the Arrange/Act/Assert comment pattern, factory functions, stub-based test doubles (no mocking frameworks), Vitest globals, and @file references to helpers/factories.ts and helpers/stubs.tsx",
+      "project_dir": "/tmp/skill-eval-projects/react-testing",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "go-api-endpoint-patterns",
+      "prompt": "Write a rule file for API endpoint patterns",
+      "expected_output": "A .claude/rules/ file documenting handler struct pattern, constructor injection, response envelope usage, validation flow, error mapping with errors.Is, middleware chain, and @file references to exemplar handlers",
+      "project_dir": "/tmp/skill-eval-projects/go-api",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "go-error-handling-with-overlap",
+      "prompt": "Write a rule file for error handling and domain error patterns",
+      "expected_output": "A .claude/rules/ file that detects overlap with existing api.md and logging.md rules, scopes itself to domain/service error patterns (apperror package, error constructors, mapping in handlers), and includes complementary references to existing rules",
+      "project_dir": "/tmp/skill-eval-projects/go-errors",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "rust-user-provided-conventions",
+      "prompt": "Write a rule file for error handling. We use thiserror for library errors and anyhow for app errors. All public functions return Result<T, Error>. Never use unwrap() in production code, only in tests.",
+      "expected_output": "A .claude/rules/ file that incorporates the user-stated conventions (thiserror, anyhow, no unwrap in prod) AND discovers additional patterns from the codebase (domain error enums, IntoResponse impls, #[source] usage), with !IMPORTANT markers on the unwrap constraint",
+      "project_dir": "/tmp/skill-eval-projects/rust-errors",
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "spring-boot-vague-request",
+      "prompt": "Write a rule file for this project",
+      "expected_output": "The agent should push back and ask for a specific topic rather than trying to document everything. If it does write something, it should be narrowly scoped to the most non-obvious conventions rather than a kitchen-sink document.",
+      "project_dir": "/tmp/skill-eval-projects/spring-boot",
+      "files": []
+    }
+  ]
+}

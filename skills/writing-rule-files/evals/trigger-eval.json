@@ -1,0 +1,22 @@
+[
+  {"query": "hey so we just finished migrating our test suite from enzyme to testing-library and I want to make sure claude follows the new patterns. can you write a rule file for our testing conventions? the tests are in packages/web/src/__tests__/", "should_trigger": true},
+  {"query": "I want to document our API conventions as a .claude/rules file. We use Go with chi router, all handlers return JSON envelope responses, and theres a specific middleware chain order that matters", "should_trigger": true},
+  {"query": "create coding guidelines for our rust error handling - we use thiserror everywhere and have a strict no-unwrap policy in prod code", "should_trigger": true},
+  {"query": "we keep getting PRs where claude puts compose previews in the wrong place and uses the wrong theme wrapper. can you look at our existing compose code and write a rule for UI conventions?", "should_trigger": true},
+  {"query": "write a rule file for dependency injection. our android project uses Hilt but we have some specific conventions around how we scope things and where we put modules that arent obvious", "should_trigger": true},
+  {"query": "I need to document our networking layer conventions. we use Retrofit with a custom error interceptor and theres a specific way response models should be structured in the data layer", "should_trigger": true},
+  {"query": "document conventions for how we structure feature modules in this monorepo - each feature has a specific package layout with screen/presenter/state and circuit integration", "should_trigger": true},
+  {"query": "can you look at our existing test files and create a rules markdown file that captures the patterns? I noticed claude keeps writing tests differently from how we do them", "should_trigger": true},
+  {"query": "add a rule for our git workflow - we use conventional commits with specific scopes, squash merge only, and PRs need a test plan section", "should_trigger": true},
+  {"query": "update the existing .claude/rules/testing-unit.md to include our new snapshot testing conventions, we just added it last sprint", "should_trigger": true},
+  {"query": "write a CLAUDE.md file for this project with build commands and project overview", "should_trigger": false},
+  {"query": "can you review .claude/rules/architecture.md and tell me if it matches what the code actually does? I think some of it might be outdated", "should_trigger": false},
+  {"query": "set up eslint with our custom rules for import ordering and naming conventions. heres our .eslintrc that needs updating", "should_trigger": false},
+  {"query": "create a CONTRIBUTING.md that explains our code review process, branch naming, and how to run tests locally", "should_trigger": false},
+  {"query": "I need to write unit tests for the UserService class - it has 3 methods that need coverage and we use mockk for mocking", "should_trigger": false},
+  {"query": "fix the failing test in PaymentHandlerTest.kt - its getting a null pointer on line 47 when trying to verify the mock interaction", "should_trigger": false},
+  {"query": "add a pre-commit hook that runs ktlint and detekt before allowing commits. put it in .githooks/", "should_trigger": false},
+  {"query": "set up the CI pipeline in .github/workflows/ci.yml - it should run tests, lint, and build the docker image on PRs to main", "should_trigger": false},
+  {"query": "can you audit our CLAUDE.md files across all packages and make sure theyre consistent and up to date? some might be missing build commands", "should_trigger": false},
+  {"query": "refactor the error handling in our payment service - the try-catch blocks are too broad and were swallowing important errors", "should_trigger": false}
+]
