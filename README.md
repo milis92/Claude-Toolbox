@@ -19,18 +19,11 @@ repetitive workflows.
 
 ## Installation
 
-```bash
-claude plugin add /path/to/claude-conventions
+Add the marketplace and install:
+
 ```
-
-Or add it to your project's `.claude/settings.json`:
-
-```json
-{
-  "plugins": [
-    "/path/to/claude-conventions"
-  ]
-}
+/plugin marketplace add milis92/Claude-Toolbox
+/plugin install claude-toolbox@claude-toolbox-marketplace
 ```
 
 ## What's Included

@@ -1,7 +1,13 @@
 {
-  "name": "claude-conventions",
-  "description": "General skills, agents, hooks, and commands for Claude Code",
+  "name": "claude-toolbox",
+  "description": "A collection of Claude Code plugins that make your AI coding workflow smarter.",
   "version": "0.1.0",
+  "author": {
+    "name": "milis92"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/milis92/Claude-Toolbox",
+  "homepage": "https://github.com/milis92/Claude-Toolbox",
   "skills": "skills/",
   "agents": "agents/",
   "hooks": "hooks/",

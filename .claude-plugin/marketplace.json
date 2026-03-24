@@ -1,0 +1,20 @@
+{
+  "name": "claude-toolbox-marketplace",
+  "owner": {
+    "name": "milis92"
+  },
+  "plugins": [
+    {
+      "name": "claude-toolbox",
+      "source": "./",
+      "description": "A collection of Claude Code plugins that make your AI coding workflow smarter.",
+      "version": "0.1.0",
+      "author": {
+        "name": "milis92"
+      },
+      "license": "MIT",
+      "repository": "https://github.com/milis92/Claude-Toolbox",
+      "homepage": "https://github.com/milis92/Claude-Toolbox"
+    }
+  ]
+}
