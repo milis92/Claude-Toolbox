@@ -1,0 +1,49 @@
+{
+  "skill_name": "write-readme",
+  "evals": [
+    {
+      "id": 1,
+      "name": "cli-new-readme",
+      "prompt": "I just finished building a CLI tool that converts markdown files to PDF. Can you write a README for it?",
+      "expected_output": "A well-structured README for the md2pdf CLI tool with project description, install instructions, usage examples with common flags, and configuration options.",
+      "files": [],
+      "assertions": [
+        "Has a clear project description in the first paragraph explaining what md2pdf does",
+        "Has a Quick Start or Getting Started section",
+        "Shows an install command (pip install or similar)",
+        "Includes usage examples with actual CLI flags (--theme, --toc, --watch, -o)",
+        "Mentions the available themes (default, dark, academic, minimal)",
+        "Has code blocks with realistic command-line examples",
+        "Mentions the license (MIT)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "library-improve-readme",
+      "prompt": "Our README is pretty outdated and thin — can you improve it?",
+      "expected_output": "An improved README for the datakit library that adds proper description, real usage examples showing schemas/validation/transforms, API overview, and development setup.",
+      "files": [],
+      "assertions": [
+        "Substantially longer and richer than the original 12-line README",
+        "Has real code examples showing Schema usage (parse, safeParse, or refine)",
+        "Shows validation or transform usage examples",
+        "Documents the public API surface or main exports (Schema, validate, transform, pipe, types)",
+        "Has development setup section (how to run tests, build, or contribute)"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "internal-app-readme",
+      "prompt": "We need a README for this internal dashboard app. It's a React + FastAPI project our team uses to monitor deployments.",
+      "expected_output": "A README for the deploy-dashboard internal tool covering what it does, how to run it locally (docker-compose), environment variables, development setup for both frontend and backend, and architecture overview.",
+      "files": [],
+      "assertions": [
+        "Explains what the dashboard monitors (deployments across environments)",
+        "Documents how to run locally, mentioning docker-compose",
+        "Lists environment variables (DATABASE_URL, GITHUB_TOKEN, ARGOCD_URL)",
+        "Has development setup covering both frontend and backend",
+        "Mentions the tech stack (React, FastAPI, PostgreSQL)"
+      ]
+    }
+  ]
+}
