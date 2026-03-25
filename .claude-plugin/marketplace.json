@@ -1,32 +1,32 @@
 {
   "name": "claude-toolbox-marketplace",
   "owner": {
-    "name": "milis92"
+    "name": "milis92",
+    "email": "cartman.dev@gmail.com"
+  },
+  "metadata": {
+    "description": "A collection of Claude Code plugins that make your AI coding workflow smarter",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
   },
   "plugins": [
     {
       "name": "create-rule",
       "source": "./plugins/create-rule",
       "description": "Discover and document coding conventions as .claude/rules/ files through a guided workflow.",
-      "version": "0.1.0",
-      "author": {
-        "name": "milis92"
-      },
-      "license": "MIT",
-      "repository": "https://github.com/milis92/Claude-Toolbox",
-      "homepage": "https://github.com/milis92/Claude-Toolbox"
+      "version": "1.0.0",
+      "category": "development",
+      "tags": ["conventions", "rules", "code-quality"],
+      "keywords": ["rules", "conventions", "code-style", "linting", "documentation"]
     },
     {
       "name": "write-readme",
       "source": "./plugins/write-readme",
       "description": "Create and improve README files with clear structure, practical examples, and audience-aware content.",
-      "version": "0.1.0",
-      "author": {
-        "name": "milis92"
-      },
-      "license": "MIT",
-      "repository": "https://github.com/milis92/Claude-Toolbox",
-      "homepage": "https://github.com/milis92/Claude-Toolbox"
+      "version": "1.0.0",
+      "category": "development",
+      "tags": ["readme", "docs", "markdown"],
+      "keywords": ["readme", "documentation", "markdown", "project-setup"]
     }
   ]
 }

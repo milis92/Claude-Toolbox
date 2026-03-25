@@ -1,11 +1,4 @@
 {
   "name": "create-rule",
-  "description": "Discover and document coding conventions as .claude/rules/ files through a guided workflow.",
-  "version": "0.1.0",
-  "author": {
-    "name": "milis92"
-  },
-  "license": "MIT",
-  "repository": "https://github.com/milis92/Claude-Toolbox",
-  "homepage": "https://github.com/milis92/Claude-Toolbox"
+  "description": "Discover and document coding conventions as .claude/rules/ files through a guided workflow."
 }
