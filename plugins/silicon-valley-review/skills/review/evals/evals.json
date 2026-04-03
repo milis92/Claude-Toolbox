@@ -1,0 +1,45 @@
+{
+  "skill_name": "review",
+  "evals": [
+    {
+      "id": 1,
+      "name": "uncommitted-changes-review",
+      "prompt": "Review my code changes",
+      "expected_output": "The skill detects uncommitted changes via git diff, adopts Richard Hendricks persona, creates an agent team with 5 Silicon Valley character teammates (Dinesh, Gilfoyle, Jared, Erlich, Jian-Yang), each reviewing their domain in parallel with in-character commentary, and concludes with a team vote on approve/reject.",
+      "project_dir": "/tmp/skill-eval-projects/node-api",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "pr-review-with-number",
+      "prompt": "Get the Pied Piper team to review PR #42",
+      "expected_output": "The skill detects the PR number, fetches the PR diff and description via gh pr commands, then assembles the full agent team review with all 5 characters reviewing the PR changes in their respective domains.",
+      "project_dir": "/tmp/skill-eval-projects/node-api",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "specific-file-review",
+      "prompt": "Run a silicon valley review on src/auth/middleware.ts",
+      "expected_output": "The skill detects the file path, gathers the diff for that specific file (or reads it fully if no diff), then runs the full agent team review scoped to that file.",
+      "project_dir": "/tmp/skill-eval-projects/node-api",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "empty-diff-handling",
+      "prompt": "Review the code",
+      "expected_output": "The skill detects no uncommitted changes, no staged changes, and tells the user in Richard's voice that there's nothing to review. Does NOT create an agent team on empty input.",
+      "project_dir": "/tmp/skill-eval-projects/clean-repo",
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "commit-range-review",
+      "prompt": "Review HEAD~3..HEAD with the Pied Piper team",
+      "expected_output": "The skill detects the commit range, gathers the diff and commit messages for that range, then runs the full agent team review across all changes in the range.",
+      "project_dir": "/tmp/skill-eval-projects/node-api",
+      "files": []
+    }
+  ]
+}
