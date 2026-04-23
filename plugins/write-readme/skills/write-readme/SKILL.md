@@ -1,15 +1,10 @@
 ---
 name: write-readme
 description: >
-  Use when the user wants to create, write, improve, rewrite, or audit a README
-  file for any project. Trigger whenever the user mentions "README", "write a readme",
-  "project documentation", "improve the readme", "create documentation for this project",
-  or asks how to document their project. Also trigger when the user says their README
-  is outdated, incomplete, or unclear, or when they're starting a new project and need
-  initial documentation. Works for any project type — libraries, CLI tools, web apps,
-  APIs, internal tools, monorepos, open-source or private.
-  Do NOT trigger for writing CLAUDE.md files, rule files, API reference docs, changelogs,
-  or CONTRIBUTING.md files unless the user specifically asks for README content.
+  Use when the user wants to create, improve, or rewrite a README file for any
+  project. Also use when the README is outdated, incomplete, or unclear. Do NOT
+  trigger for writing CLAUDE.md files, rule files, API reference docs, changelogs,
+  or CONTRIBUTING.md files.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
 ---
 
@@ -22,11 +17,13 @@ A good README is the front door to your project. It determines whether someone u
 Create a task for each of these items and complete them in order:
 
 1. **Determine mode** — is this a new README or an improvement to an existing one?
-2. **Analyze the project** — understand what the project does, how it's built, and who it's for
+2. **Analyze the project** — understand what the project does, why it exists, how it's built, and who it's for
 3. **Determine project type and audience** — library, CLI, web app, API, internal tool, etc.
-4. **Draft the README** — write it using the structure template below
-5. **Review with user** — present the draft and ask for feedback
-6. **Finalize** — apply feedback and write the file
+4. **Present findings to user** — confirm project type, audience, motivation, and planned structure before writing
+5. **Draft the README** — write it using the structure template below
+6. **Self-review** — read the first 10 lines, verify Quick Start, check for staleness, trim
+7. **Review with user** — present the draft and ask for feedback
+8. **Finalize** — apply feedback, do a final staleness pass, write the file
 
 ## Phase 1: Understand the Project
 
@@ -37,22 +34,27 @@ Before writing anything, build a mental model of the project. The depth of analy
 - Read `package.json`, `Cargo.toml`, `pyproject.toml`, `go.mod`, `build.gradle`, or whatever build/config files exist to understand dependencies, scripts, and project metadata
 - Glob for entry points (`src/main.*`, `src/index.*`, `src/lib.*`, `cmd/`, `app/`)
 - Skim 3-5 core source files to understand what the project actually does
-- Check for existing docs (`docs/`, `wiki/`, `.github/`, `CONTRIBUTING.md`)
+- Check for existing docs (`docs/`, `wiki/`, `.github/`, `CONTRIBUTING.md`) — their tone and depth signals the intended audience's technical level
 - Look at CI config (`.github/workflows/`, `Jenkinsfile`, `.gitlab-ci.yml`) for build/test commands
 - Check for Docker files, environment configs, or setup scripts
+- Check for a `LICENSE` file — its presence signals open-source and affects tone and what sections to include
+
+**Identify the "why":** Beyond what the project does technically, answer: what problem does it solve? Why not use an existing tool? This is what goes in the opening description and is the most common gap in weak READMEs.
+
+**Infer the audience:** Is this internal or public? Library consumers or app users? Beginners or experienced developers? Signals: presence of a LICENSE (open-source), CONTRIBUTING.md (community project), Docker setup (ops audience), test suite maturity.
 
 ### Improving an Existing README
 
+- **Staleness check first** — this is the most critical step. A wrong README is worse than no README. Before analyzing gaps, verify every command, path, version, and feature mentioned in the existing README against the actual project state. Cross-reference install commands against `package.json` scripts, listed features against source files, referenced paths against the actual directory structure.
 - Read the current README fully
 - Do the same project analysis as above
 - Identify gaps: what's missing, outdated, or unclear?
-- Check if the README matches the current state of the project (stale install instructions, removed features, wrong commands)
 
 ### Present Findings
 
-Before writing, briefly tell the user what you've learned: "This looks like a [type] project that [does X]. The target audience seems to be [Y]. Here's what I'm planning to include — does this sound right?"
+Before writing, tell the user what you've learned: "This looks like a [type] project that [does X] because [why it exists]. The target audience seems to be [Y]. I found these gaps: [list]. Here's what I'm planning to include — does this sound right?"
 
-This is especially important when improving an existing README — call out specific gaps you found.
+Wait for confirmation before drafting. Call out any staleness found — users often don't realize their README has drifted from the actual project.
 
 ## Phase 2: Write the README
 
@@ -60,11 +62,15 @@ This is especially important when improving an existing README — call out spec
 
 These principles matter because they directly affect whether people actually read and use your documentation:
 
-**Be clear.** Use plain language. If a term might confuse part of your audience, either use a simpler word or define it on first use. Acronyms should be spelled out the first time. The goal isn't to sound impressive — it's to be understood.
+**Write for newcomers.** The primary audience is someone who just found this repo for the first time. Don't assume they know your domain, your team's conventions, or why your project exists. Write as if the reader has zero context. If a term might confuse newcomers, define it on first use. Spell out acronyms the first time.
 
-**Be concise.** Every sentence should earn its place. Don't document edge cases in the README — link to detailed docs for that. Don't repeat information. If a section isn't pulling its weight, cut it. A 50-line README that covers the essentials beats a 500-line one that covers everything.
+**Be complete before being concise.** A README that covers the essentials is the goal — but missing content is worse than extra content. When in doubt, include it. Edge cases and deep dives belong in `docs/` or a wiki (link to them), but the core path to "it works" must be complete in the README.
 
-**Be structured.** Put the most important information first — what the project is and why someone should care. Use headings so people can scan. Use bullet lists and code blocks instead of dense paragraphs. Keep formatting consistent (if you bold key terms in one section, do it everywhere).
+**Every sentence should earn its place.** Don't repeat information. If a section isn't pulling its weight, cut it. But cut after confirming everything needed to get started is covered.
+
+**Be structured.** Put the most important information first — what the project is and why someone should care. Use headings so people can scan. Use bullet lists and code blocks instead of dense paragraphs. Keep formatting consistent.
+
+**Show real examples with expected output.** Code examples should be runnable and realistic, not pseudocode. Always include expected output so the reader knows when it worked. This is what turns a confusing README into a useful one.
 
 ### Structure Template
 
@@ -157,6 +163,36 @@ Skip for small or simple projects.
 
 ---
 
+## Contributing
+
+How to contribute — link to CONTRIBUTING.md if it exists, otherwise a brief note
+on how to open issues or PRs. Include any requirements (tests must pass, code style, etc.).
+Skip for internal tools where contribution is implicit.
+
+---
+
+## Authors / Maintainers
+
+Who built and maintains this. For open-source projects: names, GitHub handles,
+or a link to the contributors page. For internal tools: team name and contact channel.
+Skip if maintainership is obvious from the repo context.
+
+---
+
+## Support
+
+Where to get help — GitHub Issues, a Discord, a mailing list, or an internal Slack channel.
+Include a link. Skip if contributing/issues process is already clear from context.
+
+---
+
+## Changelog
+
+Link to CHANGELOG.md or release notes if they exist.
+Skip if the project doesn't maintain a changelog.
+
+---
+
 ## License
 
 State the license and link to the LICENSE file.
@@ -186,6 +222,14 @@ Lightweight, zero-dependency data validation and transformation for TypeScript.
 ### Section Dividers
 
 Use horizontal rules (`---`) between major sections. This gives the README visual breathing room and makes it easier to scan. Place a `---` after every top-level `##` section's content, before the next `##` heading.
+
+### Links
+
+Use **relative links** for internal references (other files in the repo) — they work consistently across clones and forks:
+- ✅ `[Contributing](CONTRIBUTING.md)` or `[License](LICENSE)`
+- ❌ `https://github.com/org/repo/blob/main/CONTRIBUTING.md`
+
+Use absolute URLs only for external resources (shields.io, npm, docs sites).
 
 ### Prefer Tables for Structured Information
 
@@ -221,12 +265,12 @@ The template above is a starting point. Adapt it based on project type:
 
 ## Phase 3: Review and Finalize
 
-After drafting, do a self-review:
+After drafting, do a self-review before presenting to the user:
 
-1. **Read the first 10 lines.** Would a stranger know what this project does and whether it's relevant to them? If not, rewrite the opening.
+1. **Read the first 10 lines.** If a stranger can't tell what this project does and why they should care within 10 lines, they won't read the rest. The opening is the single biggest determinant of whether someone continues. Rewrite until it hooks immediately.
 2. **Try the Quick Start mentally.** Walk through the steps — are any dependencies missing? Are commands correct? Would a fresh checkout actually work?
-3. **Check for staleness.** Do file paths, command names, and feature descriptions match the current code?
-4. **Trim.** Read every section and ask: "Does this help the reader do something or understand something important?" Cut anything that doesn't.
+3. **Check for staleness — this is the highest-priority check.** A wrong README is worse than no README. Verify every command, path, version, and feature name against the actual project state. Stale information actively misleads users and erodes trust.
+4. **Trim.** Read every section and ask: "Does this help the reader do something or understand something important?" Cut anything that doesn't — but only after verifying completeness.
 
 Present the draft to the user and explicitly ask: "Does this cover everything? Anything missing or anything you'd remove?"
 
@@ -234,10 +278,11 @@ Present the draft to the user and explicitly ask: "Does this cover everything? A
 
 Focus the conversation on what's wrong or missing. Common improvement patterns:
 
-- **Missing Quick Start**: The #1 gap. Add one.
-- **Outdated instructions**: Commands or paths that no longer work. Verify against the actual project.
+- **Weak or buried opening**: The reader can't tell what the project does or why they should care within the first 10 lines. The opening is the most important thing — if it doesn't hook immediately, nothing else matters.
+- **Missing Quick Start**: The #1 structural gap. Add one.
+- **Outdated instructions**: Commands or paths that no longer work. Verify against the actual project. A wrong README is worse than no README.
 - **Wall of text**: Break into sections with headings. Convert paragraphs to bullet lists where appropriate.
-- **No examples**: Add working code examples to Usage.
+- **No examples**: Add working code examples with expected output to Usage.
 - **Too long**: Identify content that belongs in separate docs and move it there, leaving a link.
 - **Missing context**: The README doesn't explain what the project is or why it exists.
 
