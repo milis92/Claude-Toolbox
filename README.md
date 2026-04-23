@@ -34,7 +34,7 @@ Then pick the plugins you want from the list below.
 |-------------------------------|-------|------------------------------------------------------------------------|
 | [create-rule](#create-rule)                       | Skill | Discover and document coding conventions as `.claude/rules/` files     |
 | [write-readme](#write-readme)                     | Skill | Create and improve README files with clear structure and real examples |
-| [silicon-valley-review](#silicon-valley-review)   | Skill + Agents | Code review by the Pied Piper team with in-character commentary and voting |
+
 
 ### `create-rule`
 
@@ -95,39 +95,6 @@ Then pick the plugins you want from the list below.
 3. **Write** -- Generates a README with centered title/badges, features, installation, quick start, usage,
    configuration tables, development setup, and architecture overview — separated by horizontal dividers.
 4. **Review** -- Presents the draft for your feedback before finalizing.
-
-</details>
-
-### `silicon-valley-review`
-
-```
-/plugin install silicon-valley-review@claude-toolbox-marketplace
-```
-
-> Code review by the Pied Piper team from HBO's Silicon Valley. Uses Claude Code's Agent Teams to run
-> parallel reviews with 5 character reviewers — each with a real technical domain and full in-character
-> personality. Requires Agent Teams to be enabled (`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`).
-
-```
-- Review my code changes (defaults to uncommitted diff)
-- Get the Pied Piper team to review PR #42
-- Run a silicon valley review on src/auth/
-```
-
-<details>
-<summary><strong>How it works</strong></summary>
-
-<br>
-
-1. **Scope Detection** -- Parses the argument to determine what to review: PR, commit range, file, directory, or uncommitted changes.
-2. **Team Assembly** -- Richard Hendricks (the team lead) introduces the team and spawns 5 teammates as an Agent Team.
-3. **Parallel Review** -- Each character reviews in their domain, communicating with each other via native mailbox:
-   - **Dinesh** (code quality & type design) — confidence scoring, three-pass review
-   - **Gilfoyle** (error handling & infrastructure) — silent failure hunting, performance, simplification
-   - **Jared Dunn** (documentation & test coverage) — comment accuracy, behavioral coverage analysis
-   - **Erlich Bachman** (architecture & API design) — naming quality, abstraction choices, API ergonomics
-   - **Jian-Yang** (security) — OWASP Top 10, exploit path framing, dependency scanning
-4. **The Vote** -- Each character votes approve/reject with an in-character justification. Richard tallies the results and delivers the verdict.
 
 </details>
 

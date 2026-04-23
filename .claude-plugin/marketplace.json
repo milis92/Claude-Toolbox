@@ -28,14 +28,5 @@
       "tags": ["readme", "docs", "markdown"],
       "keywords": ["readme", "documentation", "markdown", "project-setup"]
     },
-    {
-      "name": "silicon-valley-review",
-      "source": "./plugins/silicon-valley-review",
-      "description": "Code review by the Pied Piper team. Richard Hendricks leads Dinesh, Gilfoyle, Erlich, Jared, and Jian-Yang through a comprehensive review with in-character commentary and a team vote.",
-      "version": "1.0.0",
-      "category": "development",
-      "tags": ["code-review", "agent-team", "silicon-valley"],
-      "keywords": ["review", "code-review", "agent-team", "silicon-valley", "pied-piper"]
-    }
   ]
 }
