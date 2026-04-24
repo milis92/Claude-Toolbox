@@ -17,13 +17,14 @@ A good README is the front door to your project. It determines whether someone u
 Create a task for each of these items and complete them in order:
 
 1. **Determine mode** — is this a new README or an improvement to an existing one?
-2. **Analyze the project** — understand what the project does, why it exists, how it's built, and who it's for
-3. **Determine project type and audience** — library, CLI, web app, API, internal tool, etc.
-4. **Present findings to user** — confirm project type, audience, motivation, and planned structure before writing
-5. **Draft the README** — write it using the structure template
-6. **Self-review** — read the first 10 lines, verify Quick Start, check for staleness, trim
-7. **Review with user** — present the draft and ask for feedback
-8. **Finalize** — apply feedback, do a final staleness pass, write the file
+2. **Read reference docs** — read both `references/docs/writing-principles.md` and `references/docs/adapting-by-project-type.md` before proceeding
+3. **Analyze the project** — understand what the project does, why it exists, how it's built, and who it's for
+4. **Determine project type and audience** — library, CLI, web app, API, internal tool, etc.
+5. **Present findings to user** — confirm project type, audience, motivation, and planned structure before writing
+6. **Draft the README** — write it using the structure template and applying the guidance from the reference docs
+7. **Self-review** — read the first 10 lines, verify Quick Start, check for staleness, trim
+8. **Review with user** — present the draft and ask for feedback
+9. **Finalize** — apply feedback, do a final staleness pass, write the file
 
 ## Phase 1: Understand the Project
 
@@ -57,17 +58,15 @@ Wait for confirmation. Call out any staleness — users often don't realize thei
 
 ## Phase 2: Write the README
 
-### Structure Template
+### Required Reading Before Drafting
 
-@plugins/write-readme/skills/write-readme/references/readme-template.md
+!IMPORTANT: Read these three files before writing a single line of the README:
 
-For detailed guidance on writing style, header formatting, badges, dividers, tables, and what to avoid:
+1. **`references/readme-template.md`** — the canonical structure template to follow
+2. **`references/docs/writing-principles.md`** — writing style, header formatting, badges, dividers, tables, and what to avoid
+3. **`references/docs/adapting-by-project-type.md`** — how to adapt the template by project type (CLI, library, API, web app, monorepo)
 
-@plugins/write-readme/skills/write-readme/references/docs/writing-principles.md
-
-For how to adapt the template by project type (CLI, library, API, web app, monorepo):
-
-@plugins/write-readme/skills/write-readme/references/docs/adapting-by-project-type.md
+These files are not optional. The skill base directory is the directory containing this SKILL.md file — use the Read tool with the full path to load each one.
 
 ## Phase 3: Review and Finalize
 
